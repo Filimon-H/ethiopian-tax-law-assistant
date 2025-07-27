@@ -1,0 +1,12 @@
+langchain
+langchain-community
+langchainhub
+langchain-core
+chromadb
+groq
+python-dotenv
+tiktoken
+uvicorn
+fastapi
+pydantic
+sentence-transformers

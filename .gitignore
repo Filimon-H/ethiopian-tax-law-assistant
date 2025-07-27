@@ -1,3 +1,8 @@
 .env
 Data
 .venv
+
+__pycache__/
+.ipynb_checkpoints/
+*.db
+*.json
