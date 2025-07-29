@@ -16,8 +16,14 @@ def load_and_chunk_pdfs():
             loader = PyPDFLoader(file_path)
             documents = loader.load()
 
+            # ✅ Add source metadata to each page
+            for doc in documents:
+                doc.metadata["source"] = filename
+
+            # Chunk the documents with overlap
             splitter = RecursiveCharacterTextSplitter(chunk_size=600, chunk_overlap=50)
             chunks = splitter.split_documents(documents)
+
             all_chunks.extend(chunks)
 
     return all_chunks
@@ -26,3 +32,6 @@ def load_and_chunk_pdfs():
 if __name__ == "__main__":
     chunks = load_and_chunk_pdfs()
     print(f"Total chunks: {len(chunks)}")
+    print("Example chunk metadata:", chunks[0].metadata)
+
+print(chunks[0].page_content)
