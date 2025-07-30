@@ -18,3 +18,6 @@ RUN pip install --retries 10 --timeout 60 -r requirementss.txt
 
 # Run FastAPI app
 CMD ["uvicorn", "src.api.main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
+
+
+
